@@ -65,17 +65,18 @@ body {
 
 /* Header */
 .page-header {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    /* padding-top: 10px; */
+    /* padding-bottom: 10px; */
+    background: var(--background-color);
     border-bottom: 1px solid var(--first-border-color);
 }
-
+/* 
 .page-header  {
-    /* display: flex;
-   align-items: center; */
+    display: flex;
+   align-items: center;
 background: var(--background-color);
 
-}
+} */
 
 .main-nav {
     display: flex;
@@ -138,7 +139,7 @@ margin-right: 50px;
 } */
 .site-nav  .link {
     display: block;
-    padding: 15px 0;
+    padding: 32px 0;
 
     /* 
         width: 281px;
@@ -163,6 +164,24 @@ color: var(--accent-color);
     color: var(--accent-color);
 }
 
+.site-nav .link.current {
+    position: relative;
+}
+
+.site-nav .link.current::after {
+    content: "";
+    position:absolute;
+    width: 100%;
+    height: 4px;
+    /* bottom: -11px; */
+    bottom: -1px;
+    left: 0;
+
+    background-color: var(--accent-color);
+    border-radius: 2px;
+
+
+}
 .contacts-header {
     display: flex;
     /* padding: 0;
@@ -186,7 +205,7 @@ color: var(--accent-color);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px 0;
+    padding: 0;
     /* fill: var(--main-text-color); */
     color: var(--main-text-color);
     text-decoration: none;
@@ -427,6 +446,7 @@ display: block;
 
 .work-list {
     display: flex;
+    flex-wrap: wrap;
     margin-top: 50px;
     /* justify-content: space-between; */
 
@@ -436,7 +456,36 @@ display: block;
     margin-left: 30px;
 }
 
+.product-thumb {
+    position: relative;
+}
 
+.product-description {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+
+    position: absolute;
+    bottom:0;
+    left:0;
+
+    background: rgba(47, 48, 58, 0.8);
+}
+
+.product-description > .description{
+
+    font-family: inherit;
+    font-weight: 700;
+        font-size: 14px;
+        line-height: 1.14;
+        text-align: center;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+    
+        color: var(--background-color);
+}
 
 /* Team */
 .team {
